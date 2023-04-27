@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// 01.05.2002
+int N = 1;
+int M = 5;
+
 struct Node
 {
     double data;
@@ -13,20 +17,25 @@ void inserareFinal(struct Node **head_ref, double new_data)
 {
     struct Node *new_node = (struct Node *)malloc(sizeof(struct Node));
     struct Node *last = *head_ref;
+
     new_node->data = new_data;
     new_node->next = NULL;
+
     if (*head_ref == NULL)
     {
         new_node->prev = NULL;
         *head_ref = new_node;
         return;
     }
+
     while (last->next != NULL)
     {
         last = last->next;
     }
+
     last->next = new_node;
     new_node->prev = last;
+
     return;
 }
 
@@ -34,10 +43,12 @@ void inserareFinal(struct Node **head_ref, double new_data)
 void concatenare(struct Node **head1_ref, struct Node **head2_ref)
 {
     struct Node *last = *head1_ref;
+
     while (last->next != NULL)
     {
         last = last->next;
     }
+
     last->next = *head2_ref;
     (*head2_ref)->prev = last;
 }
@@ -74,10 +85,6 @@ void gasireMinMax(struct Node *node, double *min, double *max)
 
 int main()
 {
-    // Data mea de nastere este 01.05.2002
-    int N = 1;
-    int M = 5;
-
     if (N < 4)
     {
         N *= 3;

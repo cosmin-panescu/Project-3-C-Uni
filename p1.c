@@ -21,7 +21,7 @@ void push(Stack *stack, char c)
     }
     else
     {
-        printf("Nu se poate împinge elementul pe stivă: stiva este plină.\n");
+        printf("Nu se poate impinge elementul pe stiva: stiva este plina.\n");
     }
 }
 
@@ -35,7 +35,7 @@ char pop(Stack *stack)
     }
     else
     {
-        printf("Nu se poate prelua elementul din stivă: stiva este goală.\n");
+        printf("Nu se poate prelua elementul din stiva: stiva este goala.\n");
         return '\0';
     }
 }
